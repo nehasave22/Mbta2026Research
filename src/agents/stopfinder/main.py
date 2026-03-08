@@ -38,7 +38,7 @@ except Exception as e:
     log.warning(f"Could not instrument FastAPI: {e}")
 
 # MBTA API Configuration
-MBTA_API_KEY = os.getenv('MBTA_API_KEY', 'c845eff5ae504179bc9cfa69914059de')
+MBTA_API_KEY = os.getenv('MBTA_API_KEY', 'your api key')
 MBTA_BASE_URL = "https://api-v3.mbta.com"
 
 if not MBTA_API_KEY:
@@ -566,4 +566,5 @@ if __name__ == "__main__":
     port = int(os.getenv("PORT", "8003"))
     log.info(f"Starting MBTA StopFinder Agent on port {port}")
     
+
     uvicorn.run(app, host="0.0.0.0", port=port)
